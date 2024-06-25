@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Keyboard Quack",
+  "version": "1.0",
+  "description": "Riproduce un suono quack ad ogni pressione di tasto",
+  "permissions": ["activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["quack.mp3"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
